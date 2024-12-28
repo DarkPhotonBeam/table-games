@@ -1,0 +1,57 @@
+
+.game {
+
+}
+
+$letter-size: 8rem;
+
+.letter {
+  position: fixed;
+  width: $letter-size;
+  height: $letter-size;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9999px;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+}
+
+.reset {
+  position: fixed;
+  left: 4rem;
+  top: 4rem;
+}
+
+.confirm {
+  position: fixed;
+  width: 10rem;
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+  font-size: 3rem;
+  border-radius: 9999px;
+  background: #333;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.staged {
+  opacity: 0.5;
+}
+
+.time {
+  position: fixed;
+  bottom: 4rem;
+  right: 4rem;
+}
+
+.round {
+  position: fixed;
+  top: 4rem;
+  right: 4rem;
+}
