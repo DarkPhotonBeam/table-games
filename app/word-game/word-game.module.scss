@@ -3,7 +3,7 @@
 
 }
 
-$letter-size: 8rem;
+$letter-size: 6rem;
 
 .letter {
   position: fixed;
@@ -13,6 +13,11 @@ $letter-size: 8rem;
   justify-content: center;
   align-items: center;
   border-radius: 9999px;
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
   font-size: 3rem;
   text-transform: uppercase;
   font-weight: bold;
@@ -30,6 +35,11 @@ $letter-size: 8rem;
   width: 10rem;
   height: 10rem;
   display: flex;
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
   justify-content: center;
   align-items: center;
   left: 50%;

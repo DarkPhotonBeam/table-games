@@ -1,7 +1,7 @@
 "use client";
 
 import css from './word-game.module.scss';
-import {useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 
 interface Letter {
     symbol: string;
@@ -15,7 +15,7 @@ interface Letter {
     }
 }
 
-const radius = 40;
+const radius = 43;
 const colorSaturation = 180;
 
 const rgba = (r: number, g: number, b: number, a: number) => {
@@ -58,9 +58,13 @@ export default function WordGame() {
     const timeUpRef = useRef<boolean>(false);
     const timerRef = useRef<number | null>(null);
     const timeRef = useRef<number>(0);
-    const audioRef = useRef<HTMLAudioElement>(new Audio("/gameOver.mp3"));
+    const audioRef = useRef<HTMLAudioElement | null>(null);
     const lastTime = useRef<number>(-1);
     //const timeCount = useRef<number>(0);
+
+    useEffect(() => {
+	audioRef.current = new Audio("/gameOver.mp3");
+    }, []);
 
     const reset = () => {
         const _letters = [...letters];
@@ -102,7 +106,7 @@ export default function WordGame() {
         if (!timeUpRef.current) requestAnimationFrame(timeFrame);
         if (timeUpRef.current) {
             console.log("TIME UP");
-            audioRef.current.play().then();
+            if (audioRef.current != null) audioRef.current.play().then();
             reset();
         }
     };
